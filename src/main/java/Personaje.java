@@ -5,6 +5,8 @@ public class Personaje {
     private int salud;
     private int oro;
     private int nivel;
+    private boolean armaEquipada = false;
+    private boolean armaduraEquipada = false;
 
     public Personaje(int ataque, double rango, int armadura, int salud, int oro, int nivel) {
         this.ataque = ataque;
@@ -13,6 +15,22 @@ public class Personaje {
         this.salud = salud;
         this.oro = oro;
         this.nivel = nivel;
+    }
+
+    public boolean isArmaEquipada() {
+        return armaEquipada;
+    }
+
+    public void setArmaEquipada(boolean armaEquipada) {
+        this.armaEquipada = armaEquipada;
+    }
+
+    public boolean isArmaduraEquipada() {
+        return armaduraEquipada;
+    }
+
+    public void setArmaduraEquipada(boolean armaduraEquipada) {
+        this.armaduraEquipada = armaduraEquipada;
     }
 
     public int getNivel() {

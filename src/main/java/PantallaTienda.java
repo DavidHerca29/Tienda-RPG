@@ -29,8 +29,6 @@ public class PantallaTienda extends JFrame{
     private byte contEspDor = 1;
     private byte contEspBronce = 0;
     private byte contEspFuego = 0;
-    private boolean armaEquipada = false;
-    private boolean armaduraEquipada = false;
     private byte contArmaduraEspinas = 1;
     private byte contArmaduraDiamante = 0;
     private byte contArmaduraPlata = 0;
@@ -410,7 +408,7 @@ public class PantallaTienda extends JFrame{
                 botonVender.setEnabled(false);
                 Items p = listaInventario.getSelectedValue();
                 if (p instanceof Arma) {
-                    if (armaEquipada) {
+                    if (personaje.isArmaEquipada()) {
                         descripcionItem.setText("Ya hay un arma equipada y solo se puede portar 1 arma a la vez.");
                     }
                     else {
@@ -419,20 +417,20 @@ public class PantallaTienda extends JFrame{
                         personaje.setRango(personaje.getRango() + ((Arma) p).getMasRango());
                         ataqueLabel.setText("Ataque: " + personaje.getAtaque());
                         rangoLabel.setText("Rango: " + personaje.getRango());
-                        armaEquipada=true;
+                        personaje.setArmaEquipada(true);
                         indiceS = listaInventario.getSelectedIndex();
                         modelInventario.remove(indiceS);
                     }
                 }
                 else if (p instanceof Armadura){
-                    if (armaduraEquipada){
+                    if (personaje.isArmaduraEquipada()){
                         descripcionItem.setText("Ya hay una armadura equipada y solo se puede portar 1 armadura a la vez.");
                     }
                     else {
                         modelEquipado.addElement(new Armadura(p.getPrecioCompra(),p.getPrecioVenta(),p.getNombre(),p.getDescripcion(),((Armadura) p).getMasArmadura()));
                         personaje.setArmadura(personaje.getArmadura() + ((Armadura) p).getMasArmadura());
                         armaduraLabel.setText("Armadura: " + personaje.getArmadura());
-                        armaduraEquipada =true;
+                        personaje.setArmaduraEquipada(true);
                         indiceS = listaInventario.getSelectedIndex();
                         listaInventario.clearSelection();
                         modelInventario.remove(indiceS);
@@ -469,13 +467,13 @@ public class PantallaTienda extends JFrame{
                     personaje.setRango(personaje.getRango()-((Arma) p).getMasRango());
                     ataqueLabel.setText("Ataque: " + personaje.getAtaque());
                     rangoLabel.setText("Rango: " + personaje.getRango());
-                    armaEquipada = false;
+                    personaje.setArmaEquipada(false);
                 }
                 else {
                     modelInventario.addElement(new Armadura(p.getPrecioCompra(), p.getPrecioVenta(), p.getNombre(), p.getDescripcion(), ((Armadura) p).getMasArmadura()));
                     personaje.setArmadura(personaje.getArmadura()-((Armadura) p).getMasArmadura());
                     armaduraLabel.setText("Armadura: " + personaje.getArmadura());
-                    armaduraEquipada = false;
+                    personaje.setArmaduraEquipada(false);
                 }
                 indiceS = listaEquipado.getSelectedIndex();
                 listaEquipado.clearSelection();
@@ -702,7 +700,7 @@ public class PantallaTienda extends JFrame{
                     if (p instanceof Arma){
                         personaje.setAtaque(personaje.getAtaque() - ((Arma) p).getMasAtaque());
                         personaje.setRango(personaje.getRango() - ((Arma) p).getMasRango());
-                        armaEquipada=false;
+                        personaje.setArmaEquipada(false);
                         if (p.getNombre()=="Espada Dorada"){
                             contEspDor--;
                         }
@@ -715,7 +713,7 @@ public class PantallaTienda extends JFrame{
                     }
                     else {
                         personaje.setArmadura(personaje.getArmadura() - ((Armadura) p).getMasArmadura());
-                        armaduraEquipada=false;
+                        personaje.setArmaduraEquipada(false);
                         if (p.getNombre()=="Armadura de Espinas"){
                             contArmaduraEspinas--;
                         }
