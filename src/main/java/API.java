@@ -1,3 +1,12 @@
+/*
+Instituto Tecnológico de Costa Rica
+Escuela de Computacióm
+Grupo 3
+Programación Orientada a Objetos
+Realizado por: David Hernández Calvo y Javier Fonseca Mora
+Fecha de inicio: 17/09/2020
+fecha de entrega: 13/10/2020
+*/
 import java.net.URLEncoder;
 
 
@@ -15,6 +24,8 @@ import java.util.Random;
 
 
 public class API {
+    // Crea la conexion con el API y extrae la información al hacer solicitudes a la API
+    // Con los metodos instancia directamente el tipo de item que se desea
     public API() {
     }
 

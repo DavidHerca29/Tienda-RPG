@@ -1,3 +1,12 @@
+/*
+Instituto Tecnológico de Costa Rica
+Escuela de Computacióm
+Grupo 3
+Programación Orientada a Objetos
+Realizado por: David Hernández Calvo y Javier Fonseca Mora
+Fecha de inicio: 17/09/2020
+fecha de entrega: 13/10/2020
+*/
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -7,7 +16,7 @@ import java.io.File;
 import java.io.IOException;
 
 class miMarco extends JFrame{
-
+    // Esta clase sirve para crear la primer ventana de la GUI e instancia a Pantalla Tienda al presionar el boton de ingresar
     public miMarco(){
         setTitle("Tienda.Tienda RPG");
         setSize(900, 595);

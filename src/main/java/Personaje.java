@@ -1,4 +1,14 @@
+/*
+Instituto Tecnológico de Costa Rica
+Escuela de Computacióm
+Grupo 3
+Programación Orientada a Objetos
+Realizado por: David Hernández Calvo y Javier Fonseca Mora
+Fecha de inicio: 17/09/2020
+fecha de entrega: 13/10/2020
+*/
 public class Personaje {
+    //Esta clase proporciona la base de jugador
     private int ataque;
     private double rango;
     private int armadura;

@@ -1,5 +1,14 @@
-
+/*
+Instituto Tecnológico de Costa Rica
+Escuela de Computacióm
+Grupo 3
+Programación Orientada a Objetos
+Realizado por: David Hernández Calvo y Javier Fonseca Mora
+Fecha de inicio: 17/09/2020
+fecha de entrega: 13/10/2020
+*/
 public class Items {
+    //Esta es la super clase de los items que e añaden en la tienda
     private int precioCompra;
     private int precioVenta;
     private String nombre;
@@ -50,6 +59,7 @@ public class Items {
     }
 }
 class Arma extends Items{
+    // Crea los items de categoría Arma
     private int masAtaque;
     private double masRango;
 
@@ -76,6 +86,7 @@ class Arma extends Items{
     }
 }
 class Armadura extends Items{
+    // Crea los items de categoría Armadura
     private int masArmadura;
 
     public Armadura(int precioCompra, int precioVenta, String nombre, String descripcion, int masArmadura) {
@@ -92,6 +103,7 @@ class Armadura extends Items{
     }
 }
 class Consumibles extends Items{
+    // Crea los items de categoría Consumibles
     private int masNivel;
     private int masSalud;
 

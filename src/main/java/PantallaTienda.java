@@ -1,4 +1,12 @@
-
+/*
+Instituto Tecnológico de Costa Rica
+Escuela de Computacióm
+Grupo 3
+Programación Orientada a Objetos
+Realizado por: David Hernández Calvo y Javier Fonseca Mora
+Fecha de inicio: 17/09/2020
+fecha de entrega: 13/10/2020
+*/
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -8,6 +16,10 @@ import java.io.File;
 import java.io.IOException;
 
 public class PantallaTienda extends JFrame{
+    /*
+    En esta clase se crea todo lo relaciondado a la tienda con la GUI
+    Tambien instancia a la API por lo que mientras obtiene la informacion dura un poco en cargar
+    */
     private JLabel jugadorLabel;
     private JLabel armaduraLabel;
     private JLabel ataqueLabel;
